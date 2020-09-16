@@ -10,6 +10,13 @@ const app = express();
 const server = new ApolloServer({
   schema,
   validationRules: [depthLimit(7)],
+  formatError: (err) => {
+    if (!err.originalError) {
+      return err;
+    }
+    // FUTURE REFERENCE: format error here when to change error details
+    return err
+  }
 });
 app.use('*', cors());
 app.use(compression());
