@@ -9,21 +9,3 @@ const graphqlWithAuth = graphql.defaults({
   });
 
 export default graphqlWithAuth 
-
-const query = `{
-    repository(owner: "kevn07", name: "bash_profile")  {
-            name
-        }
-    }`
-
-async function helloworld() {
-    console.log('running')
-    try {
-        const repository = await graphqlWithAuth(query);
-        console.log(repository)
-    } catch (err) {
-        console.log(err)
-    }
-}
-
-helloworld()

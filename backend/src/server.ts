@@ -5,6 +5,9 @@ import { createServer } from 'http';
 import compression from 'compression';
 import cors from 'cors';
 import schema from './schema';
+import dotenv from 'dotenv';
+
+dotenv.config()
 
 const app = express();
 const server = new ApolloServer({
