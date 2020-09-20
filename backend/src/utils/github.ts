@@ -4,8 +4,8 @@ const token = process.env.GH_TOKEN ? `token ${process.env.GH_TOKEN}` : `token te
 
 const graphqlWithAuth = graphql.defaults({
     headers: {
-      authorization: token,
-    },
+      authorization: token
+    }
   });
 
 export default graphqlWithAuth 
