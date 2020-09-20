@@ -4,10 +4,8 @@ const resolverMap: IResolvers = {
   Query: {
     helloWorld(_: void, args: void): string {
       return `👋 Hello world! 👋`;
-    }
-  },
-  Github: {
-    async userRepositories(_:void, args: void): Promise<any> {
+    },
+    async userRepositories(_:void, args: void): Promise<void> {
       const query = `{
         search(query:"user:kevn07", type:REPOSITORY, first:20){
             repositoryCount
@@ -27,12 +25,14 @@ const resolverMap: IResolvers = {
     }`
     try {
       const repository = await githubClient(query);
-      return repository
+      console.log(repository);
     } catch (err) {
-      throw err
+      console.log(err)
     }
     }
   }
-  
+  // Mutation: {
+
+  // }
 };
 export default resolverMap;
