@@ -1,6 +1,6 @@
 type Query {
   helloWorld: String!
-  userRepositories(queryString: String): Any
+  queryRepositories(queryString: String): Repositories
 }
 
 type UserDetails {
@@ -9,7 +9,7 @@ type UserDetails {
 }
 
 type Repositories {
-  user: String!
+  user: String
   repositories: [Repository]
 }
 

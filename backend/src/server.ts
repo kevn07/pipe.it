@@ -8,7 +8,7 @@ import schema from './schema';
 import dotenv from 'dotenv';
 
 dotenv.config()
-console.log(process.env.GH_TOKEN)
+
 const app = express();
 const server = new ApolloServer({
   schema,
